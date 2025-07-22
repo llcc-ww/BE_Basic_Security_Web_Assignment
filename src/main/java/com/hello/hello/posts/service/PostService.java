@@ -32,7 +32,6 @@ public class PostService {
         return postResponseDTOs;
     }
 
-
     //특정 글 상세 조회
     public PostResponseDTO getPostById(Long id) {
         Optional<Post> post = postRepository.findById(id);
@@ -45,7 +44,6 @@ public class PostService {
             throw new DataNotFoundException("post not found");
         }
     }
-
 
     //글 작성
     public PostResponseDTO createPost(PostRequestDTO postRequestDTO) {
@@ -73,7 +71,6 @@ public class PostService {
         }
     }
 
-
     //글 삭제
     @Transactional
     public void deletePost(Long id) {
@@ -82,6 +79,5 @@ public class PostService {
 
         postRepository.delete(post);
     }
-
 
 }
